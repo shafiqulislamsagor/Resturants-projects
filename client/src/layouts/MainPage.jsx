@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const MainPage = () => {
     return (
-        <div>
+        <div className="inter">
             <Outlet/>
         </div>
     );
