@@ -10,16 +10,23 @@ import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
 import useAuth from "../../hooks/useAuth";
+import useAxiosPublic from "../../hooks/AxiosPublic";
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
   const { signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const axiosPub = useAxiosPublic()
   const {google} = useAuth()
   const googlehandle = () =>{
     google()
-    .then(()=>{
+    .then((current)=>{
+        const userInfo = {email: current.user?.email , name:current.user?.displayName}
+        axiosPub.post('/users',userInfo)
+        .then(()=>{
+            navigate('/')
+        })
         Swal.fire({
             title: "User Login Successful.",
             showClass: {
