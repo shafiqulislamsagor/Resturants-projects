@@ -1,7 +1,7 @@
 import axios from "axios";
-
+console.log(import.meta.env.VITE_url)
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: `${import.meta.env.VITE_url}`
 })
 const useAxiosSecure = () => {
 
