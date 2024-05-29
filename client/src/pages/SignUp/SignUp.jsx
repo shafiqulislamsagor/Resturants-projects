@@ -88,14 +88,14 @@ const SignUp = () => {
                                 </label>
                                 <input type="password"  {...register("password", {
                                     required: true,
-                                    minLength: 6,
-                                    maxLength: 20,
-                                    pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
+                                    // minLength: 6,
+                                    // maxLength: 20,
+                                    // pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/
                                 })} placeholder="password" className="input input-bordered" />
-                                {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>}
-                                {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
-                                {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
-                                {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
+                                {/* {errors.password?.type === 'required' && <p className="text-red-600">Password is required</p>} */}
+                                {/* {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>} */}
+                                {/* {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>} */}
+                                {/* {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>} */}
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
